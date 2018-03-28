@@ -48,6 +48,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        ButtonApagar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -151,6 +152,13 @@ public class Tabela_Verdade extends javax.swing.JFrame {
 
         jLabel5.setText("Expressão:");
 
+        ButtonApagar.setText("Apagar");
+        ButtonApagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonApagarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -170,32 +178,36 @@ public class Tabela_Verdade extends javax.swing.JFrame {
                             .addComponent(ButtonQ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ButtonR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ButtonS, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(ButtonNOT)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonAND)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonOR)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonXOR)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonImplication)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonEquivalence)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonOpen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonClose))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(expressaoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonApagar))
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(ButtonNOT)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ButtonAND)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ButtonOR)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ButtonXOR)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ButtonImplication)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ButtonEquivalence)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ButtonOpen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ButtonClose))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(expressaoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -216,8 +228,10 @@ public class Tabela_Verdade extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(expressaoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addGap(26, 26, 26)
-                .addComponent(jLabel3)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(ButtonApagar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ButtonP)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -226,7 +240,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
                 .addComponent(ButtonR)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ButtonS)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
@@ -242,7 +256,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
 
     private void ButtonPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPActionPerformed
         
-        if (!ultimoInput.equals("P") && !ultimoInput.equals("Q") && !ultimoInput.equals("R") && !ultimoInput.equals("S")){
+        if (!ultimoInput.equals(")") && !ultimoInput.equals("P") && !ultimoInput.equals("Q") && !ultimoInput.equals("R") && !ultimoInput.equals("S")){
             expressao += "P";
             expressaoTextField.setText(expressao); 
             ultimoInput = "P";
@@ -252,7 +266,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
 
     private void ButtonQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonQActionPerformed
 	
-		if (!ultimoInput.equals("P") && !ultimoInput.equals("Q") && !ultimoInput.equals("R") && !ultimoInput.equals("S")){
+		if (!ultimoInput.equals(")") && !ultimoInput.equals("P") && !ultimoInput.equals("Q") && !ultimoInput.equals("R") && !ultimoInput.equals("S")){
 			expressao += "Q";
 			expressaoTextField.setText(expressao);
 			ultimoInput = "Q";
@@ -262,7 +276,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
 
     private void ButtonRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRActionPerformed
         
-		if (!ultimoInput.equals("P") && !ultimoInput.equals("Q") && !ultimoInput.equals("R") && !ultimoInput.equals("S")){
+		if (!ultimoInput.equals(")") && !ultimoInput.equals("P") && !ultimoInput.equals("Q") && !ultimoInput.equals("R") && !ultimoInput.equals("S")){
 			expressao += "R";
 			expressaoTextField.setText(expressao);
 			ultimoInput = "R";
@@ -272,7 +286,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
 
     private void ButtonSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSActionPerformed
         
-		if (!ultimoInput.equals("P") && !ultimoInput.equals("Q") && !ultimoInput.equals("R") && !ultimoInput.equals("S")){
+		if (!ultimoInput.equals(")") && !ultimoInput.equals("P") && !ultimoInput.equals("Q") && !ultimoInput.equals("R") && !ultimoInput.equals("S")){
 			expressao += "S";
 			expressaoTextField.setText(expressao);
 			ultimoInput = "S";
@@ -282,7 +296,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
 
     private void ButtonNOTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonNOTActionPerformed
        
-	   if (!ultimoInput.equals("P") && !ultimoInput.equals("Q") && !ultimoInput.equals("R") && !ultimoInput.equals("S")){
+	   if (!ultimoInput.equals(")") && !ultimoInput.equals("P") && !ultimoInput.equals("Q") && !ultimoInput.equals("R") && !ultimoInput.equals("S") && !ultimoInput.equals("~")){
 			expressao += "~";
 			expressaoTextField.setText(expressao);
 			ultimoInput = "~";
@@ -292,7 +306,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
 
     private void ButtonANDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonANDActionPerformed
 	
-        if (!ultimoInput.equals("v") && !ultimoInput.equals("~") && !ultimoInput.equals("⊻") && !ultimoInput.equals("->") && !ultimoInput.equals("<-->") ){
+        if (!ultimoInput.equals("(") && !ultimoInput.equals("^") && !ultimoInput.equals("v") &&  !ultimoInput.equals("~") && !ultimoInput.equals("⊻") && !ultimoInput.equals("->") && !ultimoInput.equals("<-->") ){
             expressao += "^";
             expressaoTextField.setText(expressao);
             ultimoInput = "^";
@@ -302,7 +316,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
 
     private void ButtonORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonORActionPerformed
         
-		if (!ultimoInput.equals("v") && !ultimoInput.equals("~") && !ultimoInput.equals("⊻") && !ultimoInput.equals("->") && !ultimoInput.equals("<-->") ){
+		if (!ultimoInput.equals("(") && !ultimoInput.equals("^") && !ultimoInput.equals("v") && !ultimoInput.equals("~") && !ultimoInput.equals("⊻") && !ultimoInput.equals("->") && !ultimoInput.equals("<-->") ){
             expressao += "v";
             expressaoTextField.setText(expressao);
             ultimoInput = "v";
@@ -312,7 +326,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
 
     private void ButtonXORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonXORActionPerformed
         
-		if (!ultimoInput.equals("v") && !ultimoInput.equals("~") && !ultimoInput.equals("⊻") && !ultimoInput.equals("->") && !ultimoInput.equals("<-->") ){
+		if (!ultimoInput.equals("(") && !ultimoInput.equals("^") && !ultimoInput.equals("v") && !ultimoInput.equals("~") && !ultimoInput.equals("⊻") && !ultimoInput.equals("->") && !ultimoInput.equals("<-->") ){
             expressao += "⊻";
             expressaoTextField.setText(expressao);
             ultimoInput = "⊻";
@@ -322,7 +336,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
 
     private void ButtonImplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonImplicationActionPerformed
         
-		if (!ultimoInput.equals("v") && !ultimoInput.equals("~") && !ultimoInput.equals("⊻") && !ultimoInput.equals("->") && !ultimoInput.equals("<-->") ){
+		if (!ultimoInput.equals("(") && !ultimoInput.equals("^") && !ultimoInput.equals("v") && !ultimoInput.equals("~") && !ultimoInput.equals("⊻") && !ultimoInput.equals("->") && !ultimoInput.equals("<-->") ){
             expressao += "->";
             expressaoTextField.setText(expressao);
             ultimoInput = "->";
@@ -332,7 +346,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
 
     private void ButtonEquivalenceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEquivalenceActionPerformed
         
-		if (!ultimoInput.equals("v") && !ultimoInput.equals("~") && !ultimoInput.equals("⊻") && !ultimoInput.equals("->") && !ultimoInput.equals("<-->") ){
+		if (!ultimoInput.equals("(") && !ultimoInput.equals("^") && !ultimoInput.equals("v") && !ultimoInput.equals("~") && !ultimoInput.equals("⊻") && !ultimoInput.equals("->") && !ultimoInput.equals("<-->") ){
             expressao += "<-->";
             expressaoTextField.setText(expressao);
             ultimoInput = "<-->";
@@ -341,14 +355,26 @@ public class Tabela_Verdade extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonEquivalenceActionPerformed
 
     private void ButtonOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOpenActionPerformed
-        expressao += "(";
-        expressaoTextField.setText(expressao); 
+        	if (!ultimoInput.equals("P") && !ultimoInput.equals("Q") && !ultimoInput.equals("R") && !ultimoInput.equals("S")){
+                    expressao += "(";
+                    expressaoTextField.setText(expressao);
+                    ultimoInput = "(";
+		}
     }//GEN-LAST:event_ButtonOpenActionPerformed
 
     private void ButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCloseActionPerformed
-        expressao += ")";
-        expressaoTextField.setText(expressao); 
+	if (!ultimoInput.equals("^") && !ultimoInput.equals("v") && !ultimoInput.equals("~") && !ultimoInput.equals("⊻") && !ultimoInput.equals("->") && !ultimoInput.equals("<-->") ){
+            expressao += ")";
+            expressaoTextField.setText(expressao);
+            ultimoInput = ")";
+	}
     }//GEN-LAST:event_ButtonCloseActionPerformed
+
+    private void ButtonApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonApagarActionPerformed
+        ultimoInput = "";
+        expressao = "";
+        expressaoTextField.setText(expressao);
+    }//GEN-LAST:event_ButtonApagarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -387,6 +413,7 @@ public class Tabela_Verdade extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAND;
+    private javax.swing.JButton ButtonApagar;
     private javax.swing.JButton ButtonClose;
     private javax.swing.JButton ButtonEquivalence;
     private javax.swing.JButton ButtonImplication;
